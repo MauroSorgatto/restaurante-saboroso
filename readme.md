@@ -1,4 +1,4 @@
-# Projeto final Restaurante Saboriso
+# Projeto final Restaurante Saboroso
 
 ## Como usar
 
