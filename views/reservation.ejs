@@ -1,39 +1,39 @@
 <%- include('page-header') -%>
 
-<div class="gtco-section" style="padding-bottom: 14em;">
-    <div class="gtco-container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="col-md-6 animate-box">
+<div class="py-28 md:py-8 clear-both relative pb-[14em]">
+    <div class="max-w-[1100px] mx-auto px-4 relative">
+        <div class="flex flex-wrap">
+            <div class="w-full">
+                <div class="w-full md:w-6/12 animate-box mb-8 md:mb-0">
 
                     <% if (typeof success === 'string') { %>
-                    <div class="alert alert-success" role="alert">
+                    <div class="bg-green-500 text-white p-4 rounded mb-4" role="alert">
                         <%=success%>
                     </div>
                     <% } %>
                     <% if (typeof error === 'string') { %>
-                    <div class="alert alert-danger" role="alert"> <strong>Ops!</strong> <%=error%>
+                    <div class="bg-red-500 text-white p-4 rounded mb-4" role="alert"> <strong>Ops!</strong> <%=error%>
                     </div>
                     <% } %>
 
-                    <h3>Reserva de mesa</h3>
+                    <h3 class="text-2xl mb-5 text-black font-normal">Reserva de mesa</h3>
                     <form action="/reservation" method="POST">
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="inputName">Nome</label>
-                                <input type="text" id="inputName" name="name" class="form-control" value="<%=body.name%>">
+                        <div class="mb-4">
+                            <div class="w-full">
+                                <label for="inputName" class="block mb-2">Nome</label>
+                                <input type="text" id="inputName" name="name" class="w-full h-[46px] px-4 text-base font-light bg-transparent border-2 border-black/10 focus:border-[#FBB448] focus:outline-none transition-colors" value="<%=body.name%>">
                             </div>
                         </div>
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="inputEmail">E-mail</label>
-                                <input type="email" id="inputEmail" name="email" class="form-control" value="<%=body.email%>">
+                        <div class="mb-4">
+                            <div class="w-full">
+                                <label for="inputEmail" class="block mb-2">E-mail</label>
+                                <input type="email" id="inputEmail" name="email" class="w-full h-[46px] px-4 text-base font-light bg-transparent border-2 border-black/10 focus:border-[#FBB448] focus:outline-none transition-colors" value="<%=body.email%>">
                             </div>
                         </div>
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="inputPeople">Pessoas</label>
-                                <select id="inputPeople" name="people" class="form-control">
+                        <div class="mb-4">
+                            <div class="w-full">
+                                <label for="inputPeople" class="block mb-2">Pessoas</label>
+                                <select id="inputPeople" name="people" class="w-full h-[46px] px-4 text-base font-light bg-transparent border-2 border-black/10 focus:border-[#FBB448] focus:outline-none transition-colors">
                                     <option value=""> -- selecione -- </option>
                                     <option <% if (body.people == 1) { %>selected<% } %> value="1">1</option>
                                     <option <% if (body.people == 2) { %>selected<% } %> value="2">2</option>
@@ -43,36 +43,34 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="inputDate">Data</label>
-                                <input type="text" id="inputDate" name="date" class="form-control" value="
-                                <%=body.date%>">
+                        <div class="mb-4">
+                            <div class="w-full">
+                                <label for="inputDate" class="block mb-2">Data</label>
+                                <input type="text" id="inputDate" name="date" class="w-full h-[46px] px-4 text-base font-light bg-transparent border-2 border-black/10 focus:border-[#FBB448] focus:outline-none transition-colors" value="<%=body.date%>">
                             </div>
                         </div>
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label for="inputTime">Hora</label>
-                                <input type="text" id="inputTime" name="time" class="form-control" value="
-                                <%=body.time%>">
+                        <div class="mb-4">
+                            <div class="w-full">
+                                <label for="inputTime" class="block mb-2">Hora</label>
+                                <input type="text" id="inputTime" name="time" class="w-full h-[46px] px-4 text-base font-light bg-transparent border-2 border-black/10 focus:border-[#FBB448] focus:outline-none transition-colors" value="<%=body.time%>">
                             </div>
                         </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <input type="submit" class="btn btn-primary btn-block" value="Reservar Agora">
+                        <div class="mb-4">
+                            <div class="w-full">
+                                <input type="submit" class="w-full bg-[#FBB448] text-white border-2 border-[#FBB448] px-8 py-2 rounded text-base transition-all duration-500 hover:bg-[#fcbe61] hover:border-[#fcbe61] cursor-pointer" value="Reservar Agora">
                             </div>
                         </div>
                     </form>
                 </div>
-                <div class="col-md-5 col-md-push-1 animate-box">
-                    <div class="gtco-contact-info">
-                        <h3>Informações de Contato</h3>
-                        <ul>
-                            <li class="address">Rua Ademar Saraiva Leão, 234<br> Alvarenga, São Bernardo do Campo - SP</li>
-                            <li class="phone"><a href="tel://1234567890">+1 234 567 890</a></li>
-                            <li class="email"><a href="mailto:contato@hcode.com.br">contato@hcode.com.br</a></li>
-                            <li class="url"><a href="https://www.hcode.com.br">Hcode.com.br</a></li>
+                <div class="w-full md:w-5/12 md:ml-[8.333333%] animate-box">
+                    <div class="mb-8 float-left w-full relative">
+                        <h3 class="text-2xl mb-5 text-black font-normal">Informações de Contato</h3>
+                        <ul class="p-0 m-0">
+                            <li class="address pl-[50px] mb-8 list-none relative">Rua Ademar Saraiva Leão, 234<br> Alvarenga, São Bernardo do Campo - SP</li>
+                            <li class="phone pl-[50px] mb-8 list-none relative"><a href="tel://1234567890" class="text-[#FBB448] hover:text-[#FBB448] transition-colors">+1 234 567 890</a></li>
+                            <li class="email pl-[50px] mb-8 list-none relative"><a href="mailto:contato@hcode.com.br" class="text-[#FBB448] hover:text-[#FBB448] transition-colors">contato@hcode.com.br</a></li>
+                            <li class="url pl-[50px] mb-8 list-none relative"><a href="https://www.hcode.com.br" class="text-[#FBB448] hover:text-[#FBB448] transition-colors">Hcode.com.br</a></li>
                         </ul>
                     </div>
                 </div>
